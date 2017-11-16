@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace RPG{
     class MenuChar{
         List<Character> Chars = DataHelper.GetChars();
-        public MenuChar(){
+        public void StartMenuChar(){
 
             int opcao = 0;
 
@@ -31,9 +31,10 @@ namespace RPG{
                         break;
                     default:
                         System.Console.WriteLine("Opção invalida!");
+                        Console.ReadLine();
                         break;
                 }
-                Console.ReadLine();
+                
             }
         }
         private void Cadastrar(){
@@ -56,6 +57,7 @@ namespace RPG{
                 }
                 Console.WriteLine("\n");
             }
+            Console.ReadLine();
         }
         private void Consultar(){
             Console.Clear();
@@ -75,6 +77,7 @@ namespace RPG{
             {
                 Console.WriteLine("Nome não encontrado");
             }
+            Console.ReadLine();
         }
         private void ListaSimples(){
             Console.Clear();
@@ -83,6 +86,7 @@ namespace RPG{
 
             }
             Console.WriteLine("\n");
+            Console.ReadLine();
         }
         private void Remover(){
             this.ListaSimples();
@@ -98,6 +102,7 @@ namespace RPG{
             Chars.Remove(FindChar);
 
             Console.WriteLine(FindChar.Nome+" removido com sucesso.");
+            Console.ReadLine();
 
         }
         private void Editar(){
@@ -128,6 +133,7 @@ namespace RPG{
             //Character.Remove(FindChar);
 
             Console.WriteLine(FindChar.Nome+" editado com sucesso.");
+            Console.ReadLine();
         }
         private int ChooseOption(){
 

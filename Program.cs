@@ -6,7 +6,7 @@ namespace RPG
     {
         static void Main(string[] args)
         {
-            MenuChar menuChar = new MenuChar();
+            MenuInicial menuChar = new MenuInicial();
             
         }
 
