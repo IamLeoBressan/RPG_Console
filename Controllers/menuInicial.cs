@@ -6,6 +6,7 @@ namespace RPG{
     class MenuInicial{
 
         public MenuChar menuChar = new MenuChar();
+        public StartGame startGame = new StartGame();
         public MenuInicial()
         {
             int opcao = 0;
@@ -14,7 +15,7 @@ namespace RPG{
                 opcao = ChooseOption();
                 switch(opcao){
                     case 1:
-                        
+                        this.startGame.IniciarGame();
                         break;
                     case 2:
                         
@@ -30,7 +31,6 @@ namespace RPG{
                         Console.ReadLine();
                         break;
                 }
-                
             }
         }
         private int ChooseOption(){
