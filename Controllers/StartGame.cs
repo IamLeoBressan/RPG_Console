@@ -1,6 +1,8 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using RPG.Models;
+using RPG.Helpers;
 
 namespace RPG{
     class StartGame{
@@ -25,7 +27,7 @@ namespace RPG{
                 opcao = ChooseAction();
                 switch(opcao){
                     case 1:
-                        
+                        this.AtaqueMonster();
                         break;
                     case 2:
                         
@@ -71,6 +73,19 @@ namespace RPG{
             System.Console.WriteLine(menu);
             return Convert.ToInt32(Console.ReadLine());
 
+        }
+        private void AtaqueMonster()
+        {
+            Monster monster = new Monster(0, "Deviling");
+
+            Console.WriteLine($"Um {monster.Nome} apareceu");
+            Console.ReadLine();
+
+            if(Arena.Fight(Player, monster))
+            {
+
+            }
+            Console.ReadLine();
         }
 
     }

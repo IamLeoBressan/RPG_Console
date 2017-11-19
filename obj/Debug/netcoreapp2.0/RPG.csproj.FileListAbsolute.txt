@@ -1,0 +1,11 @@
+C:\Users\Leonardo\Desktop\Main\Estudo\Coding\DotNet\RPG\bin\Debug\netcoreapp2.0\RPG.deps.json
+C:\Users\Leonardo\Desktop\Main\Estudo\Coding\DotNet\RPG\bin\Debug\netcoreapp2.0\RPG.runtimeconfig.json
+C:\Users\Leonardo\Desktop\Main\Estudo\Coding\DotNet\RPG\bin\Debug\netcoreapp2.0\RPG.runtimeconfig.dev.json
+C:\Users\Leonardo\Desktop\Main\Estudo\Coding\DotNet\RPG\bin\Debug\netcoreapp2.0\RPG.dll
+C:\Users\Leonardo\Desktop\Main\Estudo\Coding\DotNet\RPG\bin\Debug\netcoreapp2.0\RPG.pdb
+C:\Users\Leonardo\Desktop\Main\Estudo\Coding\DotNet\RPG\obj\Debug\netcoreapp2.0\RPG.csprojResolveAssemblyReference.cache
+C:\Users\Leonardo\Desktop\Main\Estudo\Coding\DotNet\RPG\obj\Debug\netcoreapp2.0\RPG.csproj.CoreCompileInputs.cache
+C:\Users\Leonardo\Desktop\Main\Estudo\Coding\DotNet\RPG\obj\Debug\netcoreapp2.0\RPG.AssemblyInfoInputs.cache
+C:\Users\Leonardo\Desktop\Main\Estudo\Coding\DotNet\RPG\obj\Debug\netcoreapp2.0\RPG.AssemblyInfo.cs
+C:\Users\Leonardo\Desktop\Main\Estudo\Coding\DotNet\RPG\obj\Debug\netcoreapp2.0\RPG.dll
+C:\Users\Leonardo\Desktop\Main\Estudo\Coding\DotNet\RPG\obj\Debug\netcoreapp2.0\RPG.pdb

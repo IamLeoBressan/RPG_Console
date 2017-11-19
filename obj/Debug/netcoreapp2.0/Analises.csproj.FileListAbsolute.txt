@@ -18,3 +18,13 @@ C:\Users\bressl\Desktop\Leo\Coding\DotNet\RPG\obj\Debug\netcoreapp2.0\Analises.A
 C:\Users\bressl\Desktop\Leo\Coding\DotNet\RPG\obj\Debug\netcoreapp2.0\Analises.AssemblyInfo.cs
 C:\Users\bressl\Desktop\Leo\Coding\DotNet\RPG\obj\Debug\netcoreapp2.0\Analises.dll
 C:\Users\bressl\Desktop\Leo\Coding\DotNet\RPG\obj\Debug\netcoreapp2.0\Analises.pdb
+C:\Users\Leonardo\Desktop\Main\Estudo\Coding\DotNet\RPG\bin\Debug\netcoreapp2.0\Analises.deps.json
+C:\Users\Leonardo\Desktop\Main\Estudo\Coding\DotNet\RPG\bin\Debug\netcoreapp2.0\Analises.runtimeconfig.json
+C:\Users\Leonardo\Desktop\Main\Estudo\Coding\DotNet\RPG\bin\Debug\netcoreapp2.0\Analises.runtimeconfig.dev.json
+C:\Users\Leonardo\Desktop\Main\Estudo\Coding\DotNet\RPG\bin\Debug\netcoreapp2.0\Analises.dll
+C:\Users\Leonardo\Desktop\Main\Estudo\Coding\DotNet\RPG\bin\Debug\netcoreapp2.0\Analises.pdb
+C:\Users\Leonardo\Desktop\Main\Estudo\Coding\DotNet\RPG\obj\Debug\netcoreapp2.0\Analises.csproj.CoreCompileInputs.cache
+C:\Users\Leonardo\Desktop\Main\Estudo\Coding\DotNet\RPG\obj\Debug\netcoreapp2.0\Analises.AssemblyInfoInputs.cache
+C:\Users\Leonardo\Desktop\Main\Estudo\Coding\DotNet\RPG\obj\Debug\netcoreapp2.0\Analises.AssemblyInfo.cs
+C:\Users\Leonardo\Desktop\Main\Estudo\Coding\DotNet\RPG\obj\Debug\netcoreapp2.0\Analises.dll
+C:\Users\Leonardo\Desktop\Main\Estudo\Coding\DotNet\RPG\obj\Debug\netcoreapp2.0\Analises.pdb
