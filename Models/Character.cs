@@ -24,6 +24,7 @@ namespace RPG
             }
         }
         public int RealHealth { get; protected set; }
+        public int Atributos { get; private set; } = 0;
         public int STR { get; protected set; }
         public int STA { get; protected set; }
         public int DEX { get; protected set; }
@@ -60,6 +61,63 @@ namespace RPG
 
                 return descr;
             }
+        }
+        public void LevelUp()
+        {
+            this.Atributos += 3;
+            this.Level++;
+
+            string menu =
+                "1 - STR\n" +
+                "2 - STA\n" +
+                "3 - DEX\n" +
+                "4 - AGI\n" +
+                "5 - LUK\n" +
+                "6 - INT\n\n" +
+                "Digite o atributo desejado";
+
+            while (this.Atributos > 0)
+            {
+                Console.Clear();
+                Console.WriteLine($"Você passou para o Level {this.Level}");
+                Console.WriteLine($"Você tem {this.Atributos} pontos para distribuir");
+                Console.WriteLine(menu);
+                int opcao = Convert.ToInt32(Console.ReadLine());
+
+                switch (opcao)
+                {
+                    case 1:
+                        this.STR++;
+                        this.Atributos--;
+                        break;
+                    case 2:
+                        this.STA++;
+                        this.Atributos--;
+                        break;
+                    case 3:
+                        this.DEX++;
+                        this.Atributos--;
+                        break;
+                    case 4:
+                        this.AGI++;
+                        this.Atributos--;
+                        break;
+                    case 5:
+                        this.LUK++;
+                        this.Atributos--;
+                        break;
+
+                    case 6:
+                        this.INT++;
+                        this.Atributos--;
+                        break;
+                    default:
+                        Console.WriteLine("Opção invalida, tente novamente");
+                        break;
+                }
+            }
+            this.RealHealth = this.FullHealth;
+
         }
         public int SimpleAtack()
         {
@@ -106,7 +164,7 @@ namespace RPG
             if(this.Experience >= this.NextLevelExp)
             {
                 this.Experience = this.Experience - this.NextLevelExp;
-                this.Level++;
+                this.LevelUp();
             }
         }
         public string MenuSuperiorChar(){
