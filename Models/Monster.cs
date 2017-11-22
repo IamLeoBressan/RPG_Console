@@ -15,17 +15,21 @@ namespace RPG.Models
                 return rnd.Next(this.Level * 5, this.Level * 20);
             }
         }
-
-        public Monster(int id, string nome): base(id, nome)
+        public void LevelUp(int lvl){
+            this.Level = lvl;
+        }
+        public Monster(int id, string nome, int level): base(id, nome)
         {
             Random rnd = new Random();
 
-            this.STR = rnd.Next(1, 10);
-            this.STA = rnd.Next(1, 10);
-            this.DEX = rnd.Next(1, 10);
-            this.AGI = rnd.Next(1, 10);
-            this.LUK = rnd.Next(1, 10);
-            this.INT = rnd.Next(1, 10);
+            this.Level = level;
+
+            this.STR = rnd.Next(1, (8 + this.Level));
+            this.STA = rnd.Next(1, (8 + this.Level));
+            this.DEX = rnd.Next(1, (8 + this.Level));
+            this.AGI = rnd.Next(1, (8 + this.Level));
+            this.LUK = rnd.Next(1, (8 + this.Level));
+            this.INT = rnd.Next(1, (8 + this.Level));
         }
         
     }

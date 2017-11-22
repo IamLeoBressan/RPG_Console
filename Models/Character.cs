@@ -7,6 +7,7 @@ namespace RPG
         public int Id;
         public string Nome;
         public int Level;
+        public int Potions { get; private set; }
         public int Experience { get; private set; }
         public int NextLevelExp 
         {
@@ -43,7 +44,7 @@ namespace RPG
             this.AGI = 10;
             this.LUK = 10;
             this.INT = 10;
-
+            this.Potions = 3;
             this.RealHealth = this.FullHealth;
         }
         public string FullDescr{
@@ -62,10 +63,11 @@ namespace RPG
                 return descr;
             }
         }
-        public void LevelUp()
+        public virtual void LevelUp()
         {
-            this.Atributos += 3;
+            this.Atributos += 5;
             this.Level++;
+            this.Potions++;
 
             string menu =
                 "1 - STR\n" +
@@ -82,33 +84,35 @@ namespace RPG
                 Console.WriteLine($"Você passou para o Level {this.Level}");
                 Console.WriteLine($"Você tem {this.Atributos} pontos para distribuir");
                 Console.WriteLine(menu);
-                int opcao = Convert.ToInt32(Console.ReadLine());
+
+                string opcaoPrev = Console.ReadLine();
+
+                int opcao = (opcaoPrev == ""?99:Convert.ToInt32(opcaoPrev));
 
                 switch (opcao)
                 {
                     case 1:
-                        this.STR++;
+                        this.STR ++;
                         this.Atributos--;
                         break;
                     case 2:
-                        this.STA++;
+                        this.STA ++;
                         this.Atributos--;
                         break;
                     case 3:
-                        this.DEX++;
+                        this.DEX ++;
                         this.Atributos--;
                         break;
                     case 4:
-                        this.AGI++;
+                        this.AGI ++;
                         this.Atributos--;
                         break;
                     case 5:
-                        this.LUK++;
+                        this.LUK ++;
                         this.Atributos--;
                         break;
-
                     case 6:
-                        this.INT++;
+                        this.INT ++;
                         this.Atributos--;
                         break;
                     default:
@@ -117,6 +121,7 @@ namespace RPG
                 }
             }
             this.RealHealth = this.FullHealth;
+            System.Console.WriteLine("Pontos Distribuidos com sucesso");
 
         }
         public int SimpleAtack()
@@ -158,6 +163,17 @@ namespace RPG
 
             return msg;
         }
+        public void UsePotion(){
+            this.RealHealth += 50;
+
+            if(this.RealHealth > FullHealth){
+                this.RealHealth = FullHealth;
+            }
+
+            this.Potions --;
+
+            System.Console.WriteLine($"Você usou um potion e está com {this.RealHealth} de vida, você ainda tem {this.Potions} potions");
+        }
         public void AddExp(int exp){
             this.Experience += exp;
 
@@ -168,8 +184,8 @@ namespace RPG
             }
         }
         public string MenuSuperiorChar(){
-            string aux = "Nome: " + this.Nome + " Level: " + this.Level + " Classe: " + this.Classe + " \n"
-            + "Health: " + this.RealHealth + "/" + this.FullHealth + "   Experiência: " + this.Experience + "/" + this.NextLevelExp + "\n"
+            string aux = $"Nome: {this.Nome} Level: {this.Level} Classe: {this.Classe} \n"
+            + $"Health: {this.RealHealth}/{this.FullHealth}   Experiência: {this.Experience}/{this.NextLevelExp}   Potions: {this.Potions}\n"
             + "--------------------------------------------------------------------------\n";
             return aux;
         }
