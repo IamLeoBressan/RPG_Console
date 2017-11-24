@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bressl\\Desktop\\Leo\\Coding\\DotNet\\RPG\\RPG.csproj",
-      "projectName": "RPG",
-      "projectPath": "C:\\Users\\bressl\\Desktop\\Leo\\Coding\\DotNet\\RPG\\RPG.csproj",
+      "projectUniqueName": "C:\\Users\\bressl\\Desktop\\Leo\\Coding\\DotNet\\RPG_New\\RPG_New.csproj",
+      "projectName": "RPG_New",
+      "projectPath": "C:\\Users\\bressl\\Desktop\\Leo\\Coding\\DotNet\\RPG_New\\RPG_New.csproj",
       "packagesPath": "C:\\Users\\bressl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bressl\\Desktop\\Leo\\Coding\\DotNet\\RPG\\obj\\",
+      "outputPath": "C:\\Users\\bressl\\Desktop\\Leo\\Coding\\DotNet\\RPG_New\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

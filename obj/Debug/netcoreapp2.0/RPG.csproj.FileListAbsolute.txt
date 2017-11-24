@@ -20,3 +20,9 @@ C:\Users\bressl\Desktop\Leo\Coding\DotNet\RPG\obj\Debug\netcoreapp2.0\RPG.Assemb
 C:\Users\bressl\Desktop\Leo\Coding\DotNet\RPG\obj\Debug\netcoreapp2.0\RPG.AssemblyInfo.cs
 C:\Users\bressl\Desktop\Leo\Coding\DotNet\RPG\obj\Debug\netcoreapp2.0\RPG.dll
 C:\Users\bressl\Desktop\Leo\Coding\DotNet\RPG\obj\Debug\netcoreapp2.0\RPG.pdb
+C:\Users\bressl\Desktop\Leo\Coding\DotNet\RPG_New\obj\Debug\netcoreapp2.0\RPG.csprojResolveAssemblyReference.cache
+C:\Users\bressl\Desktop\Leo\Coding\DotNet\RPG_New\obj\Debug\netcoreapp2.0\RPG.csproj.CoreCompileInputs.cache
+C:\Users\bressl\Desktop\Leo\Coding\DotNet\RPG_New\obj\Debug\netcoreapp2.0\RPG.AssemblyInfoInputs.cache
+C:\Users\bressl\Desktop\Leo\Coding\DotNet\RPG_New\obj\Debug\netcoreapp2.0\RPG.AssemblyInfo.cs
+C:\Users\bressl\Desktop\Leo\Coding\DotNet\RPG_New\obj\Debug\netcoreapp2.0\RPG.dll
+C:\Users\bressl\Desktop\Leo\Coding\DotNet\RPG_New\obj\Debug\netcoreapp2.0\RPG.pdb

@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace RPG
+namespace RPG_New
 {
     class Program
     {
         static void Main(string[] args)
         {
-            MenuInicial menuChar = new MenuInicial();
+            MenuInicial menuInicial = new MenuInicial();
             
         }
 

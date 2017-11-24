@@ -1,13 +1,14 @@
-﻿using RPG.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using RPG_New.Inimigos;
+using RPG_New.Char;
 
-namespace RPG.Helpers
+namespace RPG_New.Helpers
 {
     static class Arena
     {
-        public static bool Fight(Character player, Monster monster)
+        public static bool Fight(Heroi player, Inimigo monster)
         {
             bool playerRound = true;
             while (player.RealHealth > 0 && monster.RealHealth > 0)
