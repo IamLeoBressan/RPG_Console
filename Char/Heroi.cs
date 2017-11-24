@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using RPG_New.Itens;
 
 namespace RPG_New.Char
 {
@@ -8,6 +9,8 @@ namespace RPG_New.Char
         public string Classe = "Aprendiz";
         public int Atributos { get; protected set; } = 0;
         public int Experience { get; protected set; }
+        public Mochila Mochila = new Mochila();
+        public Cinto Cinto = new Cinto();        
         public int NextLevelExp 
         {
             get

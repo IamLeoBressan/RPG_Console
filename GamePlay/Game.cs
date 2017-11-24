@@ -51,10 +51,9 @@ namespace RPG_New{
             string menu = Player.MenuSuperior()
             + $"Você está no Mapa {this.MapaAtual} de {this.TotalMapas}\n"
             + "1 - Entrar na Dungeon\n"
-            + "2 - Explorar\n"
-            + "3 - Potion\n"
+            + "2 - Mercado\n"
+            + "3 - Perfil Heroi\n"
             + "4 - Sair\n"
-            + "5 - Atacar Igual um retardado\n\n"
             + "Digite a opção desejada!";
 
             System.Console.WriteLine(menu);
@@ -63,18 +62,10 @@ namespace RPG_New{
 
             return (opcao == ""?99:Convert.ToInt32(opcao));
         }
-        private void AtaqueMonster()
+        private void StartDungeon()
         {
-            Inimigo monster = new Inimigo(0, "Deviling", Player.Level);
-
-            Console.WriteLine($"Um {monster.Nome} apareceu");
-            Console.ReadLine();
-
-            if(Arena.Fight(Player, monster))
-            {
-
-            }
-            Console.ReadLine();
+            Dungeon monster = new Dungeon();
+            
         }
         private void AtacandoIgualRetardado()
         {

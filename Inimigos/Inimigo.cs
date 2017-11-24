@@ -13,7 +13,7 @@ namespace RPG_New.Inimigos
             {
                 Random rnd = new Random();
                 
-                return rnd.Next(this.Level * 5, this.Level * 20);
+                return rnd.Next(this.Level * 2, this.Level * 5);
             }
         }
         public Inimigo(int id, string nome, int level): base(nome)

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using RPG_New.Itens;
 
 namespace RPG_New.Char
 {
@@ -9,7 +8,6 @@ namespace RPG_New.Char
         public int Id;
         public string Nome;
         public int Level;
-        public Stack<Item> Mochila { get; protected set; }
         public int FullHealth
         {
             get
