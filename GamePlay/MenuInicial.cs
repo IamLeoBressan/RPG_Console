@@ -49,7 +49,7 @@ namespace RPG_New
             Console.ReadLine();
             Heroi Player = this.CreateCharacter();
 
-            Game.IniciarGame(Player);
+            Game.IniciarGame(Player, Dificuldade);
         }
         public Heroi CreateCharacter()
         {

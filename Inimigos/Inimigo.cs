@@ -13,7 +13,7 @@ namespace RPG_New.Inimigos
             {
                 Random rnd = new Random();
                 
-                return rnd.Next(this.Level * 2, this.Level * 5);
+                return rnd.Next(this.Level * 5, this.Level * 10);
             }
         }
         public Inimigo(int id, string nome, int level): base(nome)
@@ -22,9 +22,9 @@ namespace RPG_New.Inimigos
 
             this.Level = level;
 
-            this.Forca = rnd.Next(1, (8 + this.Level));
-            this.Estamina = rnd.Next(1, (8 + this.Level));
-            this.Defesa = rnd.Next(1, (8 + this.Level));
+            this.Forca = rnd.Next(5, (10 + this.Level));
+            this.Estamina = rnd.Next(5, (10 + this.Level));
+            this.Defesa = rnd.Next(5, (10 + this.Level));
         }
         
     }

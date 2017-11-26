@@ -11,32 +11,31 @@ namespace RPG_New{
         public Heroi Player { get; private set; }    
         public int TotalMapas { get; private set; } = 7;
         public int MapaAtual { get; private set; } = 1;
-
-        public void IniciarGame(Heroi player)
+        public int Dificuldade { get; private set; }
+        public void IniciarGame(Heroi player, int dificuldade)
         {
+            this.Dificuldade = dificuldade;
             this.Player = player;
 
             Console.Clear();
             int opcao = 0;
 
-            while(opcao != 4)
+            while(opcao != 4 && player.RealHealth > 0)
             {
                 opcao = ChooseAction();
                 switch(opcao){
                     case 1:
-                        this.AtaqueMonster();
+                        this.StartDungeon();
                         break;
                     case 2:
                         
                         break;
                     case 3:
-                        
+                        Console.WriteLine(this.Player.PerfilCompleto());
+                        Console.ReadLine();
                         break;
                     case 4:
-                        break;
-                    case 5:
-                        this.AtacandoIgualRetardado();
-                        break;                        
+                        break;                 
                     default:
                         System.Console.WriteLine("Opção invalida!");
                         Console.ReadLine();
@@ -64,23 +63,19 @@ namespace RPG_New{
         }
         private void StartDungeon()
         {
-            Dungeon monster = new Dungeon();
+            Dungeon dg = new Dungeon(this.Player, this.Dificuldade);
             
-        }
-        private void AtacandoIgualRetardado()
-        {
-            while (Player.RealHealth>50){
-                Inimigo monster = new Inimigo(0, "Deviling", Player.Level);
-
-                Console.WriteLine($"Um {monster.Nome} apareceu");
-
-                if(Arena.Fight(Player, monster))
-                {
-
-                }
+            if(this.Player.RealHealth > 0)
+            {
+                this.MapaAtual++;
+                Console.WriteLine("Você Conseguiu atravessar a Dungeon");
+                Console.ReadLine();
             }
-
-            Console.ReadLine();
+            else
+            {
+                Console.WriteLine("Você morreu, tente de novo");
+                Console.ReadLine();
+            }
         }
     }
 }

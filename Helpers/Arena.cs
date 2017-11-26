@@ -8,8 +8,13 @@ namespace RPG_New.Helpers
 {
     static class Arena
     {
-        public static bool Fight(Heroi player, Inimigo monster)
+        public static bool Fight(Heroi player)
         {
+            Inimigo monster = DataHelper.GetMonster(player.Level);
+
+            Console.WriteLine($"Um {monster.Nome} apareceu");
+            Console.ReadLine();
+
             bool playerRound = true;
             while (player.RealHealth > 0 && monster.RealHealth > 0)
             {
