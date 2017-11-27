@@ -70,7 +70,7 @@ namespace RPG_New
             }
             else if(typeRoom == 1)
             {
-                string msg = "Você entrou em uma sala vazia, não tem nada aqui, apenas vazio e escuridão \n";
+                string msg = "Você entrou em uma sala vazia, não tem nada aqui. \n";
                 System.Console.WriteLine(msg);
                 Console.ReadLine();
                 SalaAtual++;

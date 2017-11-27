@@ -82,6 +82,8 @@ namespace RPG_New.Char
         {
             string aux = $"Nome: {this.Nome} Level: {this.Level} \n"
                 + $"Health: {this.RealHealth}/{this.FullHealth}   Experiência: {this.Experience}/{this.NextLevelExp}\n"
+                + $"Itens no Cinto: {this.Cinto.ShowItens()}\n"
+                + $"Item no topo da Mochila: {this.Mochila.UltimoItem()}\n"
                 + "--------------------------------------------------------------------------\n";
             return aux;
         }        
