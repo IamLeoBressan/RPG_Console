@@ -44,6 +44,7 @@ namespace RPG_New
                             Live = this.ExecutaRoom();
                             break;
                         case 2:
+                            EscolherItem();
                             break;
                         case 3:
                             break;
@@ -198,6 +199,45 @@ namespace RPG_New
                         Console.ReadLine();
                         break;
                 }
+            }
+        }
+        public void EscolherItem(){
+            
+            if((Player.Cinto.TotalItens > 0) || (Player.Mochila.TotalItens > 0))
+            {
+                string menu = "Deseja usar itens de onde ?\n"
+                    + "1 - Cinto\n"
+                    + "2 - Mochila\n";
+
+                int option = 0;
+
+                while(option < 1 || option > 2)
+                {
+                    Console.Clear();
+                    System.Console.WriteLine(menu);;
+                    string aux = Console.ReadLine();
+                    option = (aux == ""?0:Convert.ToInt32(aux));
+
+                    switch(option){
+                        case 1:
+                            Player.BuscarItemCinto();
+                            break;
+                        case 2:
+                            Player.BuscarItemMochila();
+                            break;
+                        default:
+                            System.Console.WriteLine("Opção invalida, tente novamente");
+                            Console.ReadLine();
+                            break;
+                    }
+
+                }
+            }
+            else
+            {
+                Console.Clear();
+                System.Console.WriteLine("Você não tem nenhum item para ser usado");
+                Console.ReadLine();
             }
         }
     }

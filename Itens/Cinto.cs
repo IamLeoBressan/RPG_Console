@@ -7,6 +7,16 @@ namespace RPG_New.Itens
     class Cinto
     {
         private List<Item> itens = new List<Item>();
+        public List<Item> Itens{
+            get{
+                return itens;
+            }
+        }
+        public int TotalItens {
+            get{
+                return itens.Count;
+            }
+        }
 
         public string ShowItens()
         {

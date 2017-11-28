@@ -4,12 +4,18 @@ using System.Collections.Generic;
 namespace RPG_New.Itens
 {
     class Mochila{
-        public Stack<Item> itens = new Stack<Item>();
+        private Stack<Item> itens = new Stack<Item>();
+
+        public int TotalItens{
+            get{
+                return itens.Count;
+            }
+        }
 
         public string UltimoItem()
         {
 
-            if(itens.Count > 0)
+            if(TotalItens > 0)
             {
                 return itens.Peek().Nome;
             }
@@ -23,5 +29,10 @@ namespace RPG_New.Itens
         public void AdicionaItem(Item item){
             itens.Push(item);
         }
+
+        public Item PegarUltimoItem(){
+            return itens.Pop();
+        }
+
     }
 }

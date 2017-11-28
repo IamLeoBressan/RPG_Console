@@ -28,7 +28,12 @@ namespace RPG_New.Char
             this.Defesa = 10;
             this.RealHealth = this.FullHealth;
         }
-        public int SimpleAtack()
+        public void GanharVida(int vida)
+        {
+            RealHealth += vida;
+            RealHealth = (RealHealth > FullHealth?FullHealth:RealHealth);
+        }
+        public virtual int SimpleAtack()
         {
             Random rnd = new Random();
 
@@ -37,7 +42,7 @@ namespace RPG_New.Char
 
             return Convert.ToInt32(rnd.Next(atackStart, atackFim));
         }
-        public string GetDamage(int ataque)
+        public virtual string GetDamage(int ataque)
         {
             Random rnd = new Random();
 
