@@ -46,7 +46,7 @@ namespace RPG_New.Char
         {
             Random rnd = new Random();
 
-            int defStart = this.Defesa / 2;
+            int defStart = this.Defesa / 5;
             int defFim = this.Defesa;
 
             int damage = ataque - rnd.Next(defStart, defFim);
