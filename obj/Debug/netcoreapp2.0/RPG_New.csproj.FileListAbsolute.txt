@@ -19,3 +19,4 @@ C:\Users\Leonardo\Desktop\Main\Projetos\RPG\bin\Debug\netcoreapp2.0\RPG_New.runt
 C:\Users\Leonardo\Desktop\Main\Projetos\RPG\bin\Debug\netcoreapp2.0\RPG_New.runtimeconfig.dev.json
 C:\Users\Leonardo\Desktop\Main\Projetos\RPG\bin\Debug\netcoreapp2.0\RPG_New.dll
 C:\Users\Leonardo\Desktop\Main\Projetos\RPG\bin\Debug\netcoreapp2.0\RPG_New.pdb
+C:\Users\bressl\Desktop\Leo\Coding\DotNet\RPG_New\obj\Debug\netcoreapp2.0\RPG_New.csprojResolveAssemblyReference.cache

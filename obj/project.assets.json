@@ -664,30 +664,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Leonardo\\.nuget\\packages\\": {},
+    "C:\\Users\\bressl\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Leonardo\\Desktop\\Main\\Projetos\\RPG\\RPG_New.csproj",
+      "projectUniqueName": "C:\\Users\\bressl\\Desktop\\Leo\\Coding\\DotNet\\RPG_New\\RPG_New.csproj",
       "projectName": "RPG_New",
-      "projectPath": "C:\\Users\\Leonardo\\Desktop\\Main\\Projetos\\RPG\\RPG_New.csproj",
-      "packagesPath": "C:\\Users\\Leonardo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Leonardo\\Desktop\\Main\\Projetos\\RPG\\obj\\",
+      "projectPath": "C:\\Users\\bressl\\Desktop\\Leo\\Coding\\DotNet\\RPG_New\\RPG_New.csproj",
+      "packagesPath": "C:\\Users\\bressl\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bressl\\Desktop\\Leo\\Coding\\DotNet\\RPG_New\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Leonardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\bressl\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -706,7 +704,7 @@
         "dependencies": {
           "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "2.0",
+            "version": "2.0.0",
             "autoReferenced": true
           }
         },

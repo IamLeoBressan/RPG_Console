@@ -1,6 +1,7 @@
 using System;
 using RPG_New.Char;
 using RPG_New.Helpers;
+using RPG_New.Itens;
 
 namespace RPG_New
 {
@@ -53,6 +54,10 @@ namespace RPG_New
                 }
             }
 
+            if(Live){
+                System.Console.WriteLine("Você estava prestes a sair da Dungeon quando sente um tremor");
+                Console.ReadLine();
+            }
         }
         public bool ExecutaRoom()
         {
@@ -77,6 +82,8 @@ namespace RPG_New
                 return true;
             }
             else{
+                ItemEncontrado();
+
                 this.SalaAtual++;
                 return true;
             }
@@ -155,5 +162,43 @@ namespace RPG_New
             return (option == "" ? 99 : Convert.ToInt32(option));
         }
 
+        public void ItemEncontrado(){
+            Item itemEncontrado = DataHelper.GetItem();
+
+            string menuOndeColocar = $"Você encontrou um {itemEncontrado.Nome}\n\n"
+            + "O que deseja fazer com ele ?\n"
+            + "1 - Adicionar no cinto\n"
+            + "2 - Adicionar na mochila\n"
+            + "3 - Descartar";
+
+            int option = 0;
+
+            while(option < 1 || option > 3)
+            {
+                Console.Clear();
+                Console.WriteLine(menuOndeColocar);
+
+                string aux = Console.ReadLine();
+
+                option = (aux == ""?99:Convert.ToInt32(aux));
+
+                switch (option)
+                {
+                    case 1:
+                        Player.Cinto.AdicionaItem(itemEncontrado);
+                        break;
+                    case 2:
+                        Player.Mochila.AdicionaItem(itemEncontrado);
+                        break;
+                    case 3:
+
+                        break;
+                    default:
+                        Console.WriteLine("Opção Invalida, tente novamente");
+                        Console.ReadLine();
+                        break;
+                }
+            }
+        }
     }
 }
