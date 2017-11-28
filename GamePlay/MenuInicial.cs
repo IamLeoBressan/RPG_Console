@@ -18,6 +18,7 @@ namespace RPG_New
                 switch(opcao){
                     case 1:
                         this.StartGame();
+                        Game = new Game();
                         break;
                     case 2:
                         this.MenuDificuldade();

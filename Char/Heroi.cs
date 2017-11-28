@@ -150,7 +150,7 @@ namespace RPG_New.Char
 
             int defesa = this.Defesa + (this.ItemEquipado == null?0:this.ItemEquipado.Defesa);
 
-            int defStart = defesa / 2;
+            int defStart = defesa / 5;
             int defFim = defesa;
 
             int damage = ataque - rnd.Next(defStart, defFim);
