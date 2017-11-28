@@ -20,7 +20,7 @@ namespace RPG_New{
             Console.Clear();
             int opcao = 0;
 
-            while(opcao != 4 && player.RealHealth > 0)
+            while((opcao != 4) && (player.RealHealth > 0) && (MapaAtual < TotalMapas))
             {
                 opcao = ChooseAction();
                 switch(opcao){
