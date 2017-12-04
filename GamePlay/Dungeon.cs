@@ -21,58 +21,61 @@ namespace RPG_New
             Console.WriteLine($"Você entrou na Dungeon, ela tem {this.TotalSalas} Salas");
             Console.ReadLine();
 
-            bool Live = ExecutaRoom();
+            int TpRoom = ExecutaRoom();
 
             int option = 99;
 
-            while (SalaAtual < TotalSalas && Live)
+            while (SalaAtual < TotalSalas && Player.Lives)
             {
                 int auxSala = this.SalaAtual;
 
-                while(auxSala == this.SalaAtual && Live)
+                if(TpRoom == 0)
                 {
-
-                    Console.Clear();
-                    Console.WriteLine(Player.MenuSuperior());
-                    Console.WriteLine($"Voce está na sala {SalaAtual} de {TotalSalas}\n");
-
-                    option = ChooseOption();
-
-                    switch (option)
+                    TpRoom = ExecutaRoom();
+                }
+                else
+                {
+                    while(auxSala == this.SalaAtual && Player.Lives)
                     {
-                        case 1:
-                            Live = this.ExecutaRoom();
-                            break;
-                        case 2:
-                            EscolherItem();
-                            break;
-                        case 3:
-                            break;
-                        default:
+                        Console.Clear();
+                        Console.WriteLine(Player.MenuSuperior());
+                        Console.WriteLine($"Voce está na sala {SalaAtual} de {TotalSalas}\n");
 
-                            break;
+                        option = ChooseOption();
+
+                        switch (option)
+                        {
+                            case 1:
+                                TpRoom = this.ExecutaRoom();
+                                break;
+                            case 2:
+                                EscolherItem();
+                                break;
+                            default:
+                                System.Console.WriteLine("Opcao invalida, tente novamente");
+                                break;
+                        }
                     }
                 }
+                
             }
 
-            if(Live){
+            if(Player.Lives){
                 System.Console.WriteLine("Você estava prestes a sair da Dungeon quando sente um tremor");
                 Console.ReadLine();
             }
         }
-        public bool ExecutaRoom()
+        public int ExecutaRoom()
         {
-            
             int typeRoom = this.GetTypeRoom();
 
             if(typeRoom == 0)
             {
-
+                Console.Clear();
+                System.Console.WriteLine("Voce estava caminhando para a proxima sala e de repente ouve algo estranho no escuro");
                 bool resultado = Arena.Fight(Player);
                 Console.ReadLine();
                 if (resultado) SalaAtual++;
-
-                return resultado;
             }
             else if(typeRoom == 1)
             {
@@ -80,14 +83,14 @@ namespace RPG_New
                 System.Console.WriteLine(msg);
                 Console.ReadLine();
                 SalaAtual++;
-                return true;
             }
-            else{
+            else
+            {
                 ItemEncontrado();
-
                 this.SalaAtual++;
-                return true;
             }
+
+            return typeRoom;
         }
         public int TamanhoDungeon()
         {
@@ -154,7 +157,7 @@ namespace RPG_New
             string menu = "O que deseja fazer ?\n"
             + "1 - Ir para Proxima sala\n"
             + "2 - Usar Itens\n"
-            + "3 - Chorar\n"
+            //+ "3 - Chorar\n"
             + "Digite a opção desejada!";;
 
             Console.WriteLine(menu);

@@ -20,21 +20,21 @@ namespace RPG_New{
             Console.Clear();
             int opcao = 0;
 
-            while((opcao != 4) && (player.RealHealth > 0) && (MapaAtual < TotalMapas))
+            while((opcao != 3) && (player.RealHealth > 0) && (MapaAtual < TotalMapas))
             {
                 opcao = ChooseAction();
                 switch(opcao){
                     case 1:
                         this.StartDungeon();
                         break;
-                    case 2:
+                    // case 2:
                         
-                        break;
-                    case 3:
+                    //     break;
+                    case 2:
                         Console.WriteLine(this.Player.PerfilCompleto());
                         Console.ReadLine();
                         break;
-                    case 4:
+                    case 3:
                         break;                 
                     default:
                         System.Console.WriteLine("Opção invalida!");
@@ -50,9 +50,9 @@ namespace RPG_New{
             string menu = Player.MenuSuperior()
             + $"Você está no Mapa {this.MapaAtual} de {this.TotalMapas}\n"
             + "1 - Entrar na Dungeon\n"
-            + "2 - Mercado\n"
-            + "3 - Perfil Heroi\n"
-            + "4 - Sair\n"
+            //+ "2 - Mercado\n"
+            + "2 - Perfil Heroi\n"
+            + "3 - Sair\n"
             + "Digite a opção desejada!";
 
             System.Console.WriteLine(menu);

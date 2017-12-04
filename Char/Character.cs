@@ -16,6 +16,13 @@ namespace RPG_New.Char
             }
         }
         public int RealHealth { get; protected set; }
+        public bool Lives 
+        {
+            get
+            {
+                return (this.RealHealth > 1 );
+            }
+        }
         public int Forca { get; protected set; }
         public int Estamina { get; protected set; }
         public int Defesa { get; protected set; }
