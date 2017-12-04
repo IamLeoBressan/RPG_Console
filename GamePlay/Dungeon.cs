@@ -223,10 +223,28 @@ namespace RPG_New
 
                     switch(option){
                         case 1:
-                            Player.BuscarItemCinto();
+                            if(Player.Cinto.TotalItens > 0)
+                            {
+                                Player.BuscarItemCinto();
+                            }
+                            else
+                            {
+                                Console.WriteLine("Voce nao tem itens no cinto");
+                                Console.ReadLine();
+                            }
+                            
                             break;
                         case 2:
-                            Player.BuscarItemMochila();
+                            if(Player.Mochila.TotalItens > 0)
+                            {
+                                Player.BuscarItemMochila();
+                            }
+                            else
+                            {
+                                Console.WriteLine("Voce nao tem itens na mochila");
+                                Console.ReadLine();
+                            }
+                            
                             break;
                         default:
                             System.Console.WriteLine("Opção invalida, tente novamente");

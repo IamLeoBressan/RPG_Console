@@ -17,7 +17,10 @@ namespace RPG_New.Itens
                 return itens.Count;
             }
         }
-
+        public void RemoverItem(Item item)
+        {
+            itens.Remove(item);
+        }
         public string ShowItens()
         {
             if (itens.Any())

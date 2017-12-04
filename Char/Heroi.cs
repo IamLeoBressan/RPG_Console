@@ -178,7 +178,57 @@ namespace RPG_New.Char
         }        
         public void BuscarItemCinto()
         {
+            string menu = "Qual dos itens você deseja ? \n\n";
+            List<Item> itens = Cinto.Itens;
 
+            for(int i = 0; i < itens.Count; i++)
+            {
+                menu += $"{i + 1} - {itens[i].Nome}\n";
+            }
+
+            int option = 0;
+            while (option < 1 || option > itens.Count)
+            {
+                Console.Clear();
+                Console.WriteLine(menu);
+                string aux = Console.ReadLine();
+                option = (aux == "" ? 0 : Convert.ToInt32(aux));
+            }
+
+            Item itemEscolhido = itens[option - 1];
+
+            menu = $"O item escolhido foi {itemEscolhido.Nome}\n\n"
+                            + "O que deseja fazer ?\n"
+                            + "1 - Usar\n"
+                            + "2 - Descartar\n"
+                            + "3 - Cancelar ação\n";
+
+            option = 0;
+
+            while (option < 1 || option > 3)
+            {
+                Console.Clear();
+                System.Console.WriteLine(menu);
+                string aux = Console.ReadLine();
+                option = (aux == "" ? 0 : Convert.ToInt32(aux));
+
+                switch (option)
+                {
+                    case 1:
+                        UsarItem(itemEscolhido);
+                        Cinto.RemoverItem(itemEscolhido);
+                        break;
+                    case 2:
+                        Cinto.RemoverItem(itemEscolhido);
+                        break;
+                    case 3:
+                        break;
+                    default:
+                        System.Console.WriteLine("Opção invalida, tente novamente.");
+                        Console.ReadLine();
+                        break;
+                }
+            }
 
         }
         public void UsarItem(Item item){
