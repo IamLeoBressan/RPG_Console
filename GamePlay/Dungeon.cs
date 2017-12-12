@@ -49,7 +49,7 @@ namespace RPG_New
                                 TpRoom = this.ExecutaRoom();
                                 break;
                             case 2:
-                                EscolherItem();
+                                this.Player.EscolherItem();
                                 break;
                             default:
                                 System.Console.WriteLine("Opcao invalida, tente novamente");
@@ -61,8 +61,8 @@ namespace RPG_New
             }
 
             if(Player.Lives){
-                System.Console.WriteLine("Você estava prestes a sair da Dungeon quando sente um tremor");
-                Console.ReadLine();
+                //System.Console.WriteLine("Você estava prestes a sair da Dungeon quando sente um tremor");
+                //Console.ReadLine();
             }
         }
         public int ExecutaRoom()
@@ -71,8 +71,6 @@ namespace RPG_New
 
             if(typeRoom == 0)
             {
-                Console.Clear();
-                System.Console.WriteLine("Voce estava caminhando para a proxima sala e de repente ouve algo estranho no escuro");
                 bool resultado = Arena.Fight(Player);
                 Console.ReadLine();
                 if (resultado) SalaAtual++;
@@ -202,63 +200,6 @@ namespace RPG_New
                         Console.ReadLine();
                         break;
                 }
-            }
-        }
-        public void EscolherItem(){
-            
-            if((Player.Cinto.TotalItens > 0) || (Player.Mochila.TotalItens > 0))
-            {
-                string menu = "Deseja usar itens de onde ?\n"
-                    + "1 - Cinto\n"
-                    + "2 - Mochila\n";
-
-                int option = 0;
-
-                while(option < 1 || option > 2)
-                {
-                    Console.Clear();
-                    System.Console.WriteLine(menu);;
-                    string aux = Console.ReadLine();
-                    option = (aux == ""?0:Convert.ToInt32(aux));
-
-                    switch(option){
-                        case 1:
-                            if(Player.Cinto.TotalItens > 0)
-                            {
-                                Player.BuscarItemCinto();
-                            }
-                            else
-                            {
-                                Console.WriteLine("Voce nao tem itens no cinto");
-                                Console.ReadLine();
-                            }
-                            
-                            break;
-                        case 2:
-                            if(Player.Mochila.TotalItens > 0)
-                            {
-                                Player.BuscarItemMochila();
-                            }
-                            else
-                            {
-                                Console.WriteLine("Voce nao tem itens na mochila");
-                                Console.ReadLine();
-                            }
-                            
-                            break;
-                        default:
-                            System.Console.WriteLine("Opção invalida, tente novamente");
-                            Console.ReadLine();
-                            break;
-                    }
-
-                }
-            }
-            else
-            {
-                Console.Clear();
-                System.Console.WriteLine("Você não tem nenhum item para ser usado");
-                Console.ReadLine();
             }
         }
     }

@@ -12,8 +12,39 @@ namespace RPG_New.Helpers
         {
             Inimigo monster = DataHelper.GetMonster(player.Level);
 
-            Console.WriteLine($"Um {monster.Nome} apareceu");
+
+            Console.Clear();
+            System.Console.WriteLine("Voce estava caminhando para a proxima sala quando ouve algo estranho no escuro\n");
+            Console.WriteLine($"Um {monster.Nome} apareceu\n\n");
             Console.ReadLine();
+
+            if(player.TemItens())
+            {
+                int option = 0;
+                string menu = "O que deseja fazer ?\n"
+                + "1 - Atacar\n"
+                + "2 - Usar algum Item";
+
+                
+                while (option < 1 || option > 2)
+                {
+                    Console.WriteLine(menu);
+                    string aux = Console.ReadLine();
+                    option = (aux ==""?0:Convert.ToInt16(aux));
+                    switch(option)
+                    {
+                        case 1:
+                            break;
+                        case 2:
+                            player.EscolherItem();
+                            break;
+                        default:
+                            System.Console.WriteLine("Opção invalida, tente novamente");
+                            Console.ReadLine();
+                            break;
+                    }
+                }
+            }
 
             bool playerRound = true;
             while (player.RealHealth > 0 && monster.RealHealth > 0)
@@ -29,6 +60,8 @@ namespace RPG_New.Helpers
                     playerRound = true;
                 }
             }
+
+            player.RemoveItemEquipado();
 
             if(player.RealHealth <= 0)
             {

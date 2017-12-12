@@ -38,14 +38,14 @@ namespace RPG_New
             List<Item> itens = new List<Item>
             {
                 new Item("Pote de Vida Pequeno", 2, 1, 10, 0, 0, 0, 30),
-                new Item("Pote de vida Medio", 2, 2, 10, 0, 0, 0, 60),
-                new Item("Pote de vida Grande", 2, 3, 10, 0, 0, 0, 120),
-                new Item("Espada de Madeira", 1, 1, 20, 5, 0, 0, 0),
+                new Item("Pote de vida Medio", 2, 2, 15, 0, 0, 0, 60),
+                new Item("Pote de vida Grande", 2, 3, 20, 0, 0, 0, 120),
+                new Item("Espada de Madeira", 1, 1, 10, 5, 0, 0, 0),
                 new Item("Espada de Aco", 1, 2, 20, 40, 0, 0, 0),
                 new Item("Espada de Diamante", 1, 3, 30, 20, 0, 0, 0),
-                new Item("Armadura de Madeira", 1, 1, 20, 0, 0, 5, 0),
+                new Item("Armadura de Madeira", 1, 1, 10, 0, 0, 5, 0),
                 new Item("Armadura de Aco", 1, 2, 20, 0, 4, 0, 10),
-                new Item("Armadura de Diamante", 1, 3, 20, 0, 0, 20, 0)
+                new Item("Armadura de Diamante", 1, 3, 30, 0, 0, 20, 0)
 
             };
 

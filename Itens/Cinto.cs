@@ -7,9 +7,17 @@ namespace RPG_New.Itens
     class Cinto
     {
         private List<Item> itens = new List<Item>();
+        public int PesoTotalCinto { get; private set; } = 50;
         public List<Item> Itens{
             get{
                 return itens;
+            }
+        }
+        public int PesoAtualCinto
+        { 
+            get
+            {
+                return itens.Sum(i => i.Peso);
             }
         }
         public int TotalItens {
@@ -34,17 +42,21 @@ namespace RPG_New.Itens
         }
         public void AdicionaItem(Item item)
         {
-            if(itens.Count >= 3)
+            if((PesoAtualCinto + item.Peso) > PesoTotalCinto)
             {
-                int opcao = 5;
+                int opcao = 0;
 
-                string menu = "O cinto está cheio, o que deseja fazer ?\n\n"
-                    + $"1 - Substituir {itens[0]}\n"
-                    + $"2 - Substituir {itens[1]}\n"
-                    + $"3 - Substituir {itens[2]}\n"
-                    + $"4 - Descartar";
+                string menu = "O cinto está cheio, o que deseja fazer ?\n\n";
 
-                while(opcao < 1 || opcao > 4)
+                int i;
+
+                for (i = 0; i < itens.Count; i++)
+                {
+                    menu += $"{i+1} - Substituir {itens[i]}\n";
+                }
+                menu += $"{i+1} - Descartar\n";
+
+                while(opcao < 1 || opcao > (i + 1) )
                 {
                     Console.Clear();
                     System.Console.WriteLine(menu);
@@ -53,27 +65,21 @@ namespace RPG_New.Itens
 
                     opcao = (aux == ""?99:Convert.ToInt32(aux));
 
-                    switch(opcao)
+                    if(opcao < 1 || opcao > (i + 1) )
                     {
-                        case 1:
-                            itens[0] = item;
-                            break;
-                        case 2:
-                            itens[1] = item;
-                            break;
-                        case 3:
-                            itens[2] = item;
-                            break;
-                        case 4:
-                            break;
-                        default:
-                            System.Console.WriteLine("Opção invalida, tente novamente");
-                            Console.ReadLine();
-                            break;
+                        System.Console.WriteLine("Opção invalida, tente novamente");
+                        Console.ReadLine();
+                    }
+                    else if(opcao == (i + 1)){
+                        System.Console.WriteLine("Item descartado com sucesso");
+                        Console.ReadLine();
+                    }
+                    else{
+                        itens[i-1] = item;
+                        System.Console.WriteLine("Item adicionado com sucesso");
+                        Console.ReadLine();
                     }
                 }
-                System.Console.WriteLine("Item adicionado com sucesso");
-                Console.ReadLine();
             }
             else
             {

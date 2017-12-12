@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using RPG_New.Itens;
+using System.Linq;
 
 namespace RPG_New.Char
 {
@@ -11,14 +12,24 @@ namespace RPG_New.Char
         public int Experience { get; protected set; }
         public Item ItemEquipado { get; private set; }
         public Mochila Mochila = new Mochila();
-        public Cinto Cinto = new Cinto();        
+        public Cinto Cinto = new Cinto();
+        public int PesoAtualCinto 
+        {
+            get
+            {
+                return Cinto.Itens.Sum(i => i.Peso);
+            }
+        }
         public int NextLevelExp 
         {
             get
             {
                 return Convert.ToInt32( Math.Pow(this.Level + 1, 2) * 10 );
             }
-        }        
+        }    
+        public bool TemItens(){
+            return ((Cinto.TotalItens > 0) || (Mochila.TotalItens > 0));
+        }    
         public Heroi(string nome) : base(nome)
         {
             this.Experience = 0;
@@ -32,7 +43,10 @@ namespace RPG_New.Char
                 this.Experience = this.Experience - this.NextLevelExp;
                 this.LevelUp();
             }
-        }        
+        }
+        public void RemoveItemEquipado(){
+            this.ItemEquipado = null;
+        }
         public virtual void LevelUp()
         {
             this.Atributos += 5;
@@ -81,16 +95,16 @@ namespace RPG_New.Char
         }        
         public string MenuSuperior()
         {
-            string aux = $"Nome: {this.Nome}    Level: {this.Level}    Item Equipado: {(ItemEquipado == null?"Vazio":ItemEquipado.Nome)}\n"
+            string aux = $"Nome: {this.Nome}    Level: {this.Level}    Peso do Cinto:{this.Cinto.PesoAtualCinto}/{this.Cinto.PesoTotalCinto}\n"
                 + $"Health: {this.RealHealth}/{this.FullHealth}   Experiência: {this.Experience}/{this.NextLevelExp}\n"
                 + $"Itens no Cinto: {this.Cinto.ShowItens()}\n"
                 + $"Item no topo da Mochila: {this.Mochila.UltimoItem()}\n"
                 + "--------------------------------------------------------------------------\n";
             return aux;
-        }        
+        }
         public string PerfilCompleto()
         {
-            return $"Nome: {this.Nome} Level: {this.Level} \n"
+            return $"Nome: {this.Nome} Level: {this.Level}    Peso do Cinto:{this.Cinto.PesoAtualCinto}/{this.Cinto.PesoTotalCinto}\n"
                 + $"Health: {this.RealHealth}/{this.FullHealth}   Experiência: {this.Experience}/{this.NextLevelExp}\n"
                 + $"Itens no Cinto: {this.Cinto.ShowItens()}\n"
                 + $"Item no topo da Mochila: {this.Mochila.UltimoItem()}\n"
@@ -98,7 +112,6 @@ namespace RPG_New.Char
                 + $"   Força: {this.Forca}\n"
                 + $"   Estamina: {this.Estamina}\n"
                 + $"   Defesa: {this.Defesa}\n";
-
         }
         public void BuscarItemMochila()
         {
@@ -216,7 +229,7 @@ namespace RPG_New.Char
                 {
                     case 1:
                         UsarItem(itemEscolhido);
-                        Cinto.RemoverItem(itemEscolhido);
+                        
                         break;
                     case 2:
                         Cinto.RemoverItem(itemEscolhido);
@@ -239,7 +252,47 @@ namespace RPG_New.Char
             else // Potes
             {
                 GanharVida(item.Health);
+                Cinto.RemoverItem(item);
             }
         }
+        public void EscolherItem(){
+            
+            if(this.TemItens())
+            {   
+                string menu = "Deseja usar itens de onde ?\n"
+                    + "1 - Cinto\n"
+                    + "2 - Mochila\n";
+
+                int option = 0;
+
+                while(option < 1 || option > 2)
+                {
+                    Console.Clear();
+                    System.Console.WriteLine(menu);;
+                    string aux = Console.ReadLine();
+                    option = (aux == ""?0:Convert.ToInt32(aux));
+
+                    switch(option){
+                        case 1:
+                            this.BuscarItemCinto();
+                            break;
+                        case 2:
+                            this.BuscarItemMochila();
+                            break;
+                        default:
+                            System.Console.WriteLine("Opção invalida, tente novamente");
+                            Console.ReadLine();
+                            break;
+                    }
+
+                }
+            }
+            else
+            {
+                Console.Clear();
+                System.Console.WriteLine("Você não tem nenhum item para ser usado");
+                Console.ReadLine();
+            }
+        }        
     }
 }
